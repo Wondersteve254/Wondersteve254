@@ -1,0 +1,28 @@
+name: Update Programming Jokes
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Run every hour
+
+jobs:
+  update-jokes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch Joke
+        run: |
+          JOKE=$(curl -s https://icanhazdadjoke.com/search?term=programming | jq -r '.results[0].joke')
+          echo "$JOKE" >> programming_jokes.txt
+      
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update programming jokes"
+          commit_options: "--no-verify"
