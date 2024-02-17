@@ -25,6 +25,11 @@ Here are some ideas to get you started:
 - 📫 How to reach me: @ stevewonder309@gmail.com
 - 😄 Pronouns: He/Him
 - ⚡ Fun fact: I had a dream of a business man untill i met my laptop😂😂😂
+  <br>
+  ## 😂 Here is a random joke that'll make you laugh!
+![Jokes Card](https://readme-jokes.vercel.app/api)
+
+<div style="display: flex;">
 
 <br>
 
